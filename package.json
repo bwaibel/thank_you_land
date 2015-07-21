@@ -4,10 +4,14 @@
   "description": "The thank you land main website",
   "main": "gulpfile.js",
   "dependencies": {
-    "require-dir": "^0.3.0"
+    "react": "^0.13.3"
   },
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.0",
+    "gulp": "^3.9.0",
+    "require-dir": "^0.3.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "scripts": {
     "test": "test"
