@@ -1,0 +1,25 @@
+{
+  "name": "thank_you_land",
+  "version": "1.0.0",
+  "description": "The thank you land main website",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "require-dir": "^0.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwaibel/thank_you_land.git"
+  },
+  "author": "Bryn Waibel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bwaibel/thank_you_land/issues"
+  },
+  "homepage": "https://github.com/bwaibel/thank_you_land#readme"
+}
