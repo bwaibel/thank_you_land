@@ -1,3 +1,129 @@
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+html,
+body {
+  border: 0;
+  font-family: "Helvetica-Neue", "Helvetica", Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -6,9 +132,9 @@ header,
 footer {
   max-width: 75rem;
   width: 100%;
-  margin: 0.625rem auto;
-  padding: 1.25rem;
-  background-color: #ccc;
+  margin: 0 auto;
+  padding: 0;
+  border: solid #ccc 1px;
   min-height: 6.25rem;
 }
 header:before,
@@ -27,6 +153,7 @@ main {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  border: solid #ccc 1px;
 }
 main:before,
 main:after {
@@ -37,76 +164,84 @@ main:after {
   clear: both;
 }
 section {
-  width: 74.75%;
+  width: 100%;
   float: left;
-  padding: 0.625rem 1.25rem;
-  margin: 0 1% 0 0;
-  background-color: #ddd;
+  padding: 0;
+  margin: 0 0% 0 0;
+  border: solid #ddd 1px;
 }
 aside {
-  width: 24.25%;
-  float: left;
-  padding: 0.625rem 1.25rem;
-  margin: 0 0 0 0;
-  background-color: #eee;
+  max-width: 75rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border: solid #eee 1px;
 }
-article {
-  width: 32%;
+aside:before,
+aside:after {
+  content: "";
+  display: table;
+}
+aside:after {
+  clear: both;
+}
+card {
+  width: 33.33333333%;
   float: left;
-  padding: 0 1.25rem 1.25rem 1.25rem;
-  margin: 0 2% 1.25rem 0;
-  background-color: #eee;
+  padding: 0;
+  margin: 0 0% 0 0;
+  border: solid #aaa 1px;
 }
 @media (min-width: 68rem) {
-  article:nth-of-type(3n) {
+  card:nth-of-type(3n) {
     margin-right: 0;
   }
 }
 @media (max-width: 68rem) {
-  article {
-    width: 49%;
+  card {
+    width: 50%;
     float: left;
-    padding: 0 1.25rem 1.25rem 1.25rem;
-    margin: 0 2% 1.25rem 0;
+    padding: 0;
+    margin: 0 0% 0 0;
   }
 }
 @media (max-width: 68rem) and (min-width: 53rem) {
-  article:nth-of-type(2n) {
+  card:nth-of-type(2n) {
     margin-right: 0;
   }
 }
 @media (max-width: 53rem) {
-  article {
+  card {
     width: 100%;
     float: left;
-    padding: 0 1.25rem 1.25rem 1.25rem;
-    margin: 0 0% 1.25rem 0;
+    padding: 0;
+    margin: 0 0% 0 0;
   }
   section {
-    width: 66.33333333%;
+    width: 100%;
     float: left;
-    padding: 0.625rem 1.25rem;
-    margin: 0 1% 0 0;
+    padding: 0;
+    margin: 0 0% 0 0;
   }
   aside {
-    width: 32.66666667%;
+    width: 100%;
     float: left;
-    padding: 0.625rem 1.25rem;
-    margin: 0 0 0 0;
+    padding: 0;
+    margin: 0 0% 0 0;
   }
 }
 @media (max-width: 36rem) {
   section {
     width: 100%;
     float: left;
-    padding: 0.625rem 1.25rem;
-    margin: 0 0 0 0;
+    padding: 0;
+    margin: 0 0% 0 0;
   }
   aside {
     width: 100%;
     float: left;
-    padding: 0.625rem 1.25rem;
-    margin: 0 0 0 0;
+    padding: 0;
+    margin: 0 0% 0 0;
   }
 }
 #app {
