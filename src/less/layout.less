@@ -4,28 +4,31 @@
 }
 
 header, footer {
-	.Row ( @padding: 20 * @toRems; @margin: 10 * @toRems auto; );
-	background-color: #ccc;
+	.Row;
+	border: solid #ccc 1px;
 	min-height: 100 * @toRems;
 }
 
 main {
 	.Row;
+	border: solid #ccc 1px;
 }
 
 section {
-	.Cols ( @colspan: 3; @padding: 10 * @toRems 20 * @toRems; @gutter: 1; );
-	background-color: #ddd;
+	.Cols ( @colspan: 1; @total_cols: 1;  );
+	border: solid #ddd 1px;
+
 }
 
 aside {
-	.Cols ( @colspan: 1; @padding: 10 * @toRems 20 * @toRems; @gutter: 1; @edge: true; );
-	background-color: #eee;
+	.Row;
+	border: solid #eee 1px;
+
 }
 
-article {
-	.Cols ( @colspan: 1; @total_cols: 3; @padding: 0 20 * @toRems 20 * @toRems 20 * @toRems; @margin_bottom: 20 * @toRems;  @gutter: 2; );
-	background-color: #eee;
+card {
+	.Cols ( @colspan: 1; @total_cols: 3;);
+	border: solid #aaa 1px;
 	@media (min-width: 68rem) {
 		&:nth-of-type(3n) {
 			margin-right: 0;
@@ -34,8 +37,8 @@ article {
 }
 
 @media (max-width: 68rem) {
-	article {
-		.Cols ( @colspan: 1; @total_cols: 2; @padding: 0 20 * @toRems 20 * @toRems 20 * @toRems; @margin_bottom: 20 * @toRems;  @gutter: 2; );
+	card {
+		.Cols ( @colspan: 1; @total_cols: 2; );
 		@media (min-width: 53rem) {
 			&:nth-of-type(2n) {
 				margin-right: 0;
@@ -45,22 +48,22 @@ article {
 }
 
 @media (max-width: 53rem) {
-	article {
-		.Cols ( @colspan: 1; @total_cols: 1; @padding: 0 20 * @toRems 20 * @toRems 20 * @toRems; @margin_bottom: 20 * @toRems;  @gutter: 0; );
+	card {
+		.Cols ( @colspan: 1; @total_cols: 1;);
 	}
 	section {
-		.Cols ( @colspan: 2; @total_cols: 3; @padding: 10 * @toRems 20 * @toRems; @gutter: 1; );
+		.Cols ( @colspan: 1; @total_cols: 1; );
 	}
 	aside {
-		.Cols ( @colspan: 1; @total_cols: 3; @padding: 10 * @toRems 20 * @toRems; @gutter: 1; @edge: true; );
+		.Cols ( @colspan: 1; @total_cols: 1; );
 	}
 }
 
 @media (max-width: 36rem) {
 	section {
-		.Cols ( @colspan: 1; @total_cols: 1; @padding: 10 * @toRems 20 * @toRems; @edge: true; );
+		.Cols ( @colspan: 1; @total_cols: 1; );
 	}
 	aside {
-		.Cols ( @colspan: 1; @total_cols: 1; @padding: 10 * @toRems 20 * @toRems; @edge: true; );
+		.Cols ( @colspan: 1; @total_cols: 1; );
 	}
 }

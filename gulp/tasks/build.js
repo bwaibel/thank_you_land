@@ -17,7 +17,7 @@ gulp.task('jsx', function() {
 });
 
 gulp.task('html', function () {
-  return gulp.src('src/index.html')
+  return gulp.src('src/html/*.html')
     .pipe(gulp.dest('dist'));
 });
 
