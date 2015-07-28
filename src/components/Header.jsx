@@ -13,7 +13,7 @@ module.exports = React.createClass({
   render() {
     return (
       <header>
-        <h1>Thank You Land: {randomThought()}</h1>
+        <img src='images/logo.png' height="64" /><h1>{randomThought()}</h1>
       </header>
     );
   }
