@@ -4,6 +4,7 @@
   "description": "The thank you land main website",
   "main": "gulpfile.js",
   "dependencies": {
+    "lodash": "^3.10.0",
     "react": "^0.13.3"
   },
   "devDependencies": {

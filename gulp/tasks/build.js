@@ -10,7 +10,6 @@ var gulpif = require('gulp-if');
 var config = require('../config.js');
 
 gulp.task('jsx', function() {
-  console.log(config);
   return browserify({
       entries: 'src/app.jsx',
       extensions: ['.jsx'],
@@ -41,7 +40,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('prod', function(cb) {
-  config.env = 'production';
+  config.switch('production');
   cb();
 })
 
