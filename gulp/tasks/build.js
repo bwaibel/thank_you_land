@@ -1,10 +1,16 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var babelify = require('babelify');
+var uglify = require('gulp-uglify');
 var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var less = require('gulp-less');
+var gulpif = require('gulp-if');
+
+var config = require('../config.js');
 
 gulp.task('jsx', function() {
+  console.log(config);
   return browserify({
       entries: 'src/app.jsx',
       extensions: ['.jsx'],
@@ -13,7 +19,14 @@ gulp.task('jsx', function() {
     .transform(babelify)
     .bundle()
     .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(gulpif(config.env=='production', uglify()))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('images', function () {
+  return gulp.src('src/images/**/*')
+    .pipe(gulp.dest('dist/images'));
 });
 
 gulp.task('html', function () {
@@ -27,4 +40,10 @@ gulp.task('less', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['jsx','html','less']);
+gulp.task('prod', function(cb) {
+  config.env = 'production';
+  cb();
+})
+
+gulp.task('build', ['jsx','html','less', 'images']);
+gulp.task('build:prod', ['prod','jsx','html','less', 'images']);
